@@ -1,0 +1,9 @@
+name: ci
+
+on:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  lint-commits:
+    uses: ./.github/workflows/lint-commits.yml

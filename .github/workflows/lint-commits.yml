@@ -1,0 +1,42 @@
+name: lint-commit
+
+on:
+  workflow_call:
+
+jobs:
+  validate-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate trigger
+        run: |
+          if [ "${{ github.event_name }}" != "push" ]; then
+            echo "Error: lint-commit must be triggered by a push event, got: ${{ github.event_name }}"
+            exit 1
+          fi
+
+  lint-commit:
+    needs: validate-trigger
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install commitlint
+        run: npm install --no-save @commitlint/cli @commitlint/config-angular
+
+      - name: Create commitlint config
+        run: |
+          cat > commitlint.config.js << 'EOF'
+          module.exports = {
+            extends: ['@commitlint/config-angular'],
+            rules: { 'scope-empty': [2, 'always'] },
+          };
+          EOF
+
+      - name: Lint commits
+        run: |
+          jq -r '.[].message | split("\n")[0]' <<< '${{ toJSON(github.event.commits) }}' | \
+            while read -r subject; do
+              echo "$subject" | npx commitlint --config commitlint.config.js
+            done
