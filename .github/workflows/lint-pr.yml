@@ -1,0 +1,38 @@
+name: lint-pr
+
+on:
+  workflow_call:
+
+jobs:
+  validate-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate trigger
+        run: |
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "Error: lint-pr must be triggered by a pull_request event, got: ${{ github.event_name }}"
+            exit 1
+          fi
+
+  lint-pr:
+    needs: validate-trigger
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install commitlint
+        run: npm install --no-save @commitlint/cli @commitlint/config-angular
+
+      - name: Create commitlint config
+        run: |
+          cat > commitlint.config.js << 'EOF'
+          module.exports = {
+            extends: ['@commitlint/config-angular'],
+            rules: { 'scope-empty': [2, 'always'] },
+          };
+          EOF
+
+      - name: Lint PR title
+        run: echo "${{ github.event.pull_request.title }}" | npx commitlint --config commitlint.config.js

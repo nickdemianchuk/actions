@@ -1,9 +1,16 @@
 name: ci
 
 on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
   push:
     branches-ignore: [main]
 
 jobs:
+  lint-pr:
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/lint-pr.yml
+
   lint-commits:
+    if: github.event_name == 'push'
     uses: ./.github/workflows/lint-commits.yml
