@@ -1,4 +1,4 @@
-name: lint-commit
+name: lint-pr
 
 on:
   workflow_call:
@@ -9,12 +9,12 @@ jobs:
     steps:
       - name: Validate trigger
         run: |
-          if [ "${{ github.event_name }}" != "push" ]; then
-            echo "Error: lint-commit must be triggered by a push event, got: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "Error: lint-pr must be triggered by a pull_request event, got: ${{ github.event_name }}"
             exit 1
           fi
 
-  lint-commits:
+  lint-pr:
     needs: validate-trigger
     runs-on: ubuntu-latest
     steps:
@@ -34,9 +34,5 @@ jobs:
           };
           EOF
 
-      - name: Lint commits
-        run: |
-          jq -r '.[].message | split("\n")[0]' <<< '${{ toJSON(github.event.commits) }}' | \
-            while read -r subject; do
-              echo "$subject" | npx commitlint --config commitlint.config.js
-            done
+      - name: Lint PR title
+        run: echo "${{ github.event.pull_request.title }}" | npx commitlint --config commitlint.config.js
