@@ -35,4 +35,6 @@ jobs:
           EOF
 
       - name: Lint PR title
-        run: echo "${{ github.event.pull_request.title }}" | npx commitlint --config commitlint.config.js
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: echo "$PR_TITLE" | npx commitlint --config commitlint.config.js
