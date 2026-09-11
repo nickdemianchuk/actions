@@ -35,8 +35,10 @@ jobs:
           EOF
 
       - name: Lint commits
+        env:
+          COMMITS_JSON: ${{ toJSON(github.event.commits) }}
         run: |
-          jq -r '.[].message | split("\n")[0]' <<< '${{ toJSON(github.event.commits) }}' | \
+          echo "$COMMITS_JSON" | jq -r '.[].message | split("\n")[0]' | \
             while read -r subject; do
               echo "$subject" | npx commitlint --config commitlint.config.js
             done
