@@ -29,6 +29,9 @@ jobs:
             git push origin 0.0.0
           fi
 
+      - name: Install semantic-release plugins
+        run: npm install --no-save semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
+
       - name: Create semantic-release config
         run: |
           cat > .releaserc.json << 'EOF'
@@ -48,4 +51,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx --yes semantic-release
+        run: npx semantic-release
