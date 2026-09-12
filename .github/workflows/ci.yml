@@ -14,6 +14,16 @@ jobs:
     if: github.event_name == 'push' && github.ref != 'refs/heads/main'
     uses: ./.github/workflows/lint-commits.yml
 
+  release-dry-run:
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/release.yml
+    with:
+      dry_run: true
+
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:

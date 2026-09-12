@@ -2,6 +2,11 @@ name: release
 
 on:
   workflow_call:
+    inputs:
+      dry_run:
+        description: Run in dry-run mode without publishing
+        type: boolean
+        default: false
 
 jobs:
   release:
@@ -23,11 +28,15 @@ jobs:
           node-version: '24'
 
       - name: Bootstrap initial version tag
+        if: ${{ !inputs.dry_run }}
         run: |
           if ! git tag --list | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
             git tag 0.0.0
             git push origin 0.0.0
           fi
+
+      - name: Install semantic-release plugins
+        run: npm install --no-save semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
 
       - name: Create semantic-release config
         run: |
@@ -48,4 +57,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx --yes semantic-release
+        run: npx semantic-release ${{ inputs.dry_run && '--dry-run' || '' }}
