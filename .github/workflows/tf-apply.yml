@@ -2,10 +2,12 @@ name: tf-apply
 
 on:
   workflow_call:
+    inputs:
+      workspace:
+        required: true
+        type: string
     secrets:
       TF_CLOUD_ORGANIZATION:
-        required: true
-      TF_WORKSPACE:
         required: true
       TF_API_TOKEN:
         required: true
@@ -20,18 +22,12 @@ jobs:
       contents: read
     env:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
-      TF_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
       TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
     steps:
       - uses: actions/checkout@v7
-      - uses: hashicorp/setup-terraform@v4
+      - uses: dflook/terraform-apply@v3.1.0
         with:
-          terraform_version: "1.16.x"
-      - run: terraform init
-        env:
-          TF_VAR_github_token: ${{ secrets.TF_GITHUB_TOKEN }}
-          TF_VAR_github_owner: ${{ github.repository_owner }}
-      - run: terraform apply -auto-approve -no-color
+          workspace: ${{ inputs.workspace }}
         env:
           TF_VAR_github_token: ${{ secrets.TF_GITHUB_TOKEN }}
           TF_VAR_github_owner: ${{ github.repository_owner }}
