@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/nickdemianchuk/actions/compare/0.2.1...0.2.2) (2026-09-13)
+
+
+### Reverts
+
+* Revert "fix: simplify release workflow by removing bot check ([#10](https://github.com/nickdemianchuk/actions/issues/10))" ([#11](https://github.com/nickdemianchuk/actions/issues/11)) ([4da27f3](https://github.com/nickdemianchuk/actions/commit/4da27f3bb1755a64984578525c67926439d3c254))
+
 ## [0.2.1](https://github.com/nickdemianchuk/actions/compare/0.2.0...0.2.1) (2026-09-13)
 
 
