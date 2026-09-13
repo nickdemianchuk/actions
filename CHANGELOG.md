@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/nickdemianchuk/actions/compare/0.1.0...0.2.0) (2026-09-13)
+
+
+### Features
+
+* use github-actions bot as release committer ([#9](https://github.com/nickdemianchuk/actions/issues/9)) ([e807c94](https://github.com/nickdemianchuk/actions/commit/e807c94cc4067a7fde9a0a38359c88525b1929a5))
+
 # [0.1.0](https://github.com/[secure]/actions/compare/0.0.1...0.1.0) (2026-09-13)
 
 
