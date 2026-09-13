@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/nickdemianchuk/actions/compare/0.3.0...0.3.1) (2026-09-13)
+
+
+### Bug Fixes
+
+* pass workspace input to dflook/terraform-plan ([#13](https://github.com/nickdemianchuk/actions/issues/13)) ([0ef27cc](https://github.com/nickdemianchuk/actions/commit/0ef27ccaa20794ee637497ffae25101003777587))
+
 # [0.3.0](https://github.com/nickdemianchuk/actions/compare/0.2.2...0.3.0) (2026-09-13)
 
 
