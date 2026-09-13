@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/nickdemianchuk/actions/compare/0.2.2...0.3.0) (2026-09-13)
+
+
+### Features
+
+* add reusable tf-plan and tf-apply workflows ([#12](https://github.com/nickdemianchuk/actions/issues/12)) ([5a0c842](https://github.com/nickdemianchuk/actions/commit/5a0c842c9aaa9b770e50aaef0c6695de4ad0aee9))
+
 ## [0.2.2](https://github.com/nickdemianchuk/actions/compare/0.2.1...0.2.2) (2026-09-13)
 
 
