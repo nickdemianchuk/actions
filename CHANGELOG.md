@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/nickdemianchuk/actions/compare/0.3.1...0.3.2) (2026-09-13)
+
+
+### Bug Fixes
+
+* pass GITHUB_TOKEN to dflook/terraform-apply for plan approval ([#18](https://github.com/nickdemianchuk/actions/issues/18)) ([c20bbef](https://github.com/nickdemianchuk/actions/commit/c20bbefd01a67b4701c52ea35c79b9a5ab9563ef))
+
 ## [0.3.1](https://github.com/nickdemianchuk/actions/compare/0.3.0...0.3.1) (2026-09-13)
 
 
