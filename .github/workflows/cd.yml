@@ -1,0 +1,17 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/release.yml
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

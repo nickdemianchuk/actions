@@ -14,12 +14,3 @@ jobs:
     if: github.event_name == 'push' && github.ref != 'refs/heads/main'
     uses: ./.github/workflows/lint-commits.yml
 
-  release:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-    uses: ./.github/workflows/release.yml
-    secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
