@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/nickdemianchuk/actions/compare/0.2.0...0.2.1) (2026-09-13)
+
+
+### Bug Fixes
+
+* simplify release workflow by removing bot check ([#10](https://github.com/nickdemianchuk/actions/issues/10)) ([8b770db](https://github.com/nickdemianchuk/actions/commit/8b770dbad81c9797f9f860d44b9d811ea81ee0ef))
+
 # [0.2.0](https://github.com/nickdemianchuk/actions/compare/0.1.0...0.2.0) (2026-09-13)
 
 
