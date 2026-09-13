@@ -1,3 +1,10 @@
+## [0.3.3](https://github.com/nickdemianchuk/actions/compare/0.3.2...0.3.3) (2026-09-13)
+
+
+### Bug Fixes
+
+* set auto_approve to skip PR comment requirement ([#20](https://github.com/nickdemianchuk/actions/issues/20)) ([ac3a21c](https://github.com/nickdemianchuk/actions/commit/ac3a21c8bd789268a760bb0817c2bd772a8e5868))
+
 ## [0.3.2](https://github.com/nickdemianchuk/actions/compare/0.3.1...0.3.2) (2026-09-13)
 
 
