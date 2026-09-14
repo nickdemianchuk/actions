@@ -6,6 +6,10 @@ on:
       workspace:
         required: true
         type: string
+      variables:
+        required: false
+        type: string
+        default: ""
     secrets:
       TF_CLOUD_ORGANIZATION:
         required: true
@@ -13,8 +17,6 @@ on:
         required: true
       TF_GITHUB_TOKEN:
         required: true
-      TF_VAR_octo_buddy_private_key:
-        required: false
 
 jobs:
   tf-apply:
@@ -32,7 +34,7 @@ jobs:
         with:
           workspace: ${{ inputs.workspace }}
           auto_approve: true
+          variables: ${{ inputs.variables }}
         env:
           TF_VAR_github_token: ${{ secrets.TF_GITHUB_TOKEN }}
           TF_VAR_github_owner: ${{ github.repository_owner }}
-          TF_VAR_octo_buddy_private_key: ${{ secrets.TF_VAR_octo_buddy_private_key }}
