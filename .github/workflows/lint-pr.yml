@@ -27,7 +27,7 @@ jobs:
             exit 1
           fi
 
-  lint-pr:
+  check-pr-title:
     needs: validate-trigger
     runs-on: ubuntu-latest
     steps:
