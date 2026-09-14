@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/nickdemianchuk/actions/compare/0.4.1...0.5.0) (2026-09-14)
+
+
+### Features
+
+* require octo-buddy private key in terraform ([#26](https://github.com/nickdemianchuk/actions/issues/26)) ([8e1cdd7](https://github.com/nickdemianchuk/actions/commit/8e1cdd7fbe03c936315213ef109133ecb1709da6))
+
 ## [0.4.1](https://github.com/nickdemianchuk/actions/compare/0.4.0...0.4.1) (2026-09-14)
 
 
