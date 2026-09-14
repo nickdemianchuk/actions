@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/nickdemianchuk/actions/compare/0.3.3...0.4.0) (2026-09-14)
+
+
+### Features
+
+* fail lint-pr when pr body is missing ([#24](https://github.com/nickdemianchuk/actions/issues/24)) ([700f81f](https://github.com/nickdemianchuk/actions/commit/700f81f40e8bc4a676982376d86d69808047fbcd))
+
 ## [0.3.3](https://github.com/nickdemianchuk/actions/compare/0.3.2...0.3.3) (2026-09-13)
 
 
