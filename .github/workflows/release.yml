@@ -13,9 +13,6 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-
-    if: github.actor != 'github-actions[bot]'
-
     steps:
       - uses: actions/checkout@v7
         with:
