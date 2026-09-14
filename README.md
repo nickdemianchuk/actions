@@ -4,6 +4,14 @@ Reusable GitHub Actions workflows: commit/PR linting, semantic-release versionin
 
 ## Workflows
 
+| Workflow | Trigger | Purpose |
+|---|---|---|
+| [`lint-pr.yml`](#lint-pryml) | `pull_request` | Lint PR title (Conventional Commits) |
+| [`lint-commits.yml`](#lint-commitsyml) | `push` | Lint commit subjects on the branch |
+| [`release.yml`](#releaseyml) | `workflow_call` | semantic-release: version, changelog, tag, GitHub release |
+| [`tf-plan.yml`](#tf-planyml) | `workflow_call` | `terraform plan` on a Terraform Cloud workspace |
+| [`tf-apply.yml`](#tf-applyyml) | `workflow_call` | `terraform apply` on a Terraform Cloud workspace |
+
 ### `lint-pr.yml`
 Lints the PR title against [Conventional Commits](https://www.conventionalcommits.org/) (Angular preset, scope required). Must be triggered by a `pull_request` event.
 
