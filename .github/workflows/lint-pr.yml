@@ -14,11 +14,11 @@ jobs:
             exit 1
           fi
 
-  check-pr-body:
+  validate-pr-body:
     needs: validate-trigger
     runs-on: ubuntu-latest
     steps:
-      - name: Check PR body
+      - name: Validate PR body
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
@@ -27,7 +27,7 @@ jobs:
             exit 1
           fi
 
-  check-pr-title:
+  validate-pr-title:
     needs: validate-trigger
     runs-on: ubuntu-latest
     steps:
