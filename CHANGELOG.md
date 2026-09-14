@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/nickdemianchuk/actions/compare/0.6.0...0.7.0) (2026-09-14)
+
+
+### Features
+
+* customize semantic-release pr comment ([#29](https://github.com/nickdemianchuk/actions/issues/29)) ([969c1e1](https://github.com/nickdemianchuk/actions/commit/969c1e1035f7ef5ec2b1f0421418d47d231f0728))
+
 # [0.6.0](https://github.com/nickdemianchuk/actions/compare/0.5.0...0.6.0) (2026-09-14)
 
 
