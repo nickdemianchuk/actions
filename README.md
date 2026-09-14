@@ -7,7 +7,7 @@ Reusable GitHub Actions workflows: commit/PR linting, semantic-release versionin
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | [`lint-pr.yml`](#lint-pryml) | `pull_request` | Lint PR title against the [semantic-release](https://semantic-release.gitbook.io/semantic-release/) commit convention |
-| [`lint-commits.yml`](#lint-commitsyml) | `push` | Lint commit subjects against the [semantic-release](https://semantic-release.gitbook.io/semantic-release/) commit convention |
+| [`lint-commits.yml`](#lint-commitsyml) | `push` | Lint commits against the [semantic-release](https://semantic-release.gitbook.io/semantic-release/) commit convention |
 | [`release.yml`](#releaseyml) | `workflow_call` | semantic-release: version, changelog, tag, GitHub release |
 | [`tf-plan.yml`](#tf-planyml) | `workflow_call` | `terraform plan` on a Terraform Cloud workspace |
 | [`tf-apply.yml`](#tf-applyyml) | `workflow_call` | `terraform apply` on a Terraform Cloud workspace |
