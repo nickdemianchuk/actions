@@ -13,6 +13,8 @@ on:
         required: true
       TF_GITHUB_TOKEN:
         required: true
+      TF_VAR_octo_buddy_private_key:
+        required: false
 
 jobs:
   tf-apply:
@@ -33,3 +35,4 @@ jobs:
         env:
           TF_VAR_github_token: ${{ secrets.TF_GITHUB_TOKEN }}
           TF_VAR_github_owner: ${{ github.repository_owner }}
+          TF_VAR_octo_buddy_private_key: ${{ secrets.TF_VAR_octo_buddy_private_key }}
