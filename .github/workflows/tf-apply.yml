@@ -14,7 +14,7 @@ on:
       TF_GITHUB_TOKEN:
         required: true
       TF_VAR_octo_buddy_private_key:
-        required: false
+        required: true
 
 jobs:
   tf-apply:
