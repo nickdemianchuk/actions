@@ -31,7 +31,7 @@ jobs:
 ```
 
 ### `release.yml`
-Runs [semantic-release](https://semantic-release.org) on `main`: bumps the version from commit history, updates `CHANGELOG.md`, tags, and publishes a GitHub release. Skips runs triggered by `github-actions[bot]` to avoid loops.
+Runs [semantic-release](https://semantic-release.org) on `main`: bumps the version from commit history, updates `CHANGELOG.md`, tags, and publishes a GitHub release.
 
 ```yaml
 jobs:
