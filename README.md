@@ -42,10 +42,11 @@ jobs:
       pull-requests: write
     uses: nickdemianchuk/actions/.github/workflows/release.yml@main
     secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      APP_CLIENT_ID: ${{ vars.OCTO_BUDDY_CLIENT_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
 ```
 
-`GH_TOKEN` needs a token with permission to push commits/tags and create releases (a fine-grained PAT, not the default `GITHUB_TOKEN`, if you want release commits to trigger downstream workflows).
+`APP_CLIENT_ID`/`APP_PRIVATE_KEY` mint a short-lived [Octo Buddy](https://github.com/apps/octo-buddy) GitHub App token (via `actions/create-github-app-token`) so release commits push and trigger downstream workflows, in place of a stored PAT. The app is registered per-repo in `github-ops`; see that repo's README for setup.
 
 ### `tf-plan.yml`
 Runs `terraform plan` against a Terraform Cloud workspace via [dflook/terraform-plan](https://github.com/dflook/terraform-plan) and posts the plan as a PR comment.
@@ -59,8 +60,11 @@ jobs:
     secrets:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      TF_GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
+      TF_VAR_octo_buddy_private_key: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
 ```
+
+`TF_VAR_octo_buddy_private_key` passes the [Octo Buddy](https://github.com/apps/octo-buddy) app's private key through to `github-ops`'s Terraform config as `octo_buddy_private_key`.
 
 ### `tf-apply.yml`
 Runs `terraform apply` (auto-approved) against a Terraform Cloud workspace via [dflook/terraform-apply](https://github.com/dflook/terraform-apply).
@@ -75,7 +79,10 @@ jobs:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
       TF_GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
+      TF_VAR_octo_buddy_private_key: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
 ```
+
+`TF_VAR_octo_buddy_private_key` passes the [Octo Buddy](https://github.com/apps/octo-buddy) app's private key through to `github-ops`'s Terraform config as `octo_buddy_private_key`.
 
 ## Versioning
 
