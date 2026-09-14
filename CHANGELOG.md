@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/nickdemianchuk/actions/compare/0.4.0...0.4.1) (2026-09-14)
+
+
+### Bug Fixes
+
+* add condition to skip release on chore commits ([#25](https://github.com/nickdemianchuk/actions/issues/25)) ([8e44f5f](https://github.com/nickdemianchuk/actions/commit/8e44f5f8579f3673ceef78d47325b95df961f5fb))
+
 # [0.4.0](https://github.com/nickdemianchuk/actions/compare/0.3.3...0.4.0) (2026-09-14)
 
 
