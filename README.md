@@ -69,11 +69,6 @@ jobs:
       TF_GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
 ```
 
-## Usage in this repo
+## Versioning
 
-`ci.yml` and `cd.yml` show how the workflows above compose:
-
-- **ci**: on PRs, calls `lint-pr`; on pushes to non-main branches, calls `lint-commits`.
-- **cd**: on push to `main`, calls `release`.
-
-Pin `@main` to a specific tag or commit SHA if you want reproducible builds instead of always tracking the latest version.
+`@main` always tracks the latest version. Pin to a tag (e.g. `@0.3.3`) or commit SHA instead for reproducible builds.
