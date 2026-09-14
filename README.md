@@ -61,7 +61,7 @@ jobs:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
       TF_GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
-      TF_VAR_octo_buddy_private_key: ${{ secrets.TF_VAR_octo_buddy_private_key }}
+      TF_VAR_octo_buddy_private_key: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
 ```
 
 `TF_VAR_octo_buddy_private_key` passes the [Octo Buddy](https://github.com/apps/octo-buddy) app's private key through to `github-ops`'s Terraform config as `octo_buddy_private_key`.
@@ -79,7 +79,7 @@ jobs:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
       TF_GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
-      TF_VAR_octo_buddy_private_key: ${{ secrets.TF_VAR_octo_buddy_private_key }}
+      TF_VAR_octo_buddy_private_key: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
 ```
 
 `TF_VAR_octo_buddy_private_key` passes the [Octo Buddy](https://github.com/apps/octo-buddy) app's private key through to `github-ops`'s Terraform config as `octo_buddy_private_key`.
