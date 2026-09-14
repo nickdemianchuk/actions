@@ -14,5 +14,8 @@ jobs:
       issues: write
       pull-requests: write
     uses: ./.github/workflows/release.yml
+    with:
+      use_app_token: true
     secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      APP_CLIENT_ID: ${{ vars.OCTO_BUDDY_CLIENT_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.OCTO_BUDDY_PRIVATE_KEY }}
