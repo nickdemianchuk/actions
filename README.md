@@ -6,14 +6,14 @@ Reusable GitHub Actions workflows: commit/PR linting, semantic-release versionin
 
 | Workflow | Trigger | Purpose |
 |---|---|---|
-| [`lint-pr.yml`](#lint-pryml) | `pull_request` | Lint PR title (Conventional Commits) |
-| [`lint-commits.yml`](#lint-commitsyml) | `push` | Lint commit subjects on the branch |
+| [`lint-pr.yml`](#lint-pryml) | `pull_request` | Lint PR title against the [semantic-release](https://semantic-release.gitbook.io/semantic-release/) commit convention |
+| [`lint-commits.yml`](#lint-commitsyml) | `push` | Lint commit subjects against the [semantic-release](https://semantic-release.gitbook.io/semantic-release/) commit convention |
 | [`release.yml`](#releaseyml) | `workflow_call` | semantic-release: version, changelog, tag, GitHub release |
 | [`tf-plan.yml`](#tf-planyml) | `workflow_call` | `terraform plan` on a Terraform Cloud workspace |
 | [`tf-apply.yml`](#tf-applyyml) | `workflow_call` | `terraform apply` on a Terraform Cloud workspace |
 
 ### `lint-pr.yml`
-Lints the PR title against [Conventional Commits](https://www.conventionalcommits.org/) (Angular preset, scope required). Must be triggered by a `pull_request` event.
+Lints the PR title against the commit convention [semantic-release](https://semantic-release.gitbook.io/semantic-release/) expects (Angular preset, scope required). Must be triggered by a `pull_request` event.
 
 ```yaml
 jobs:
@@ -22,7 +22,7 @@ jobs:
 ```
 
 ### `lint-commits.yml`
-Lints every commit subject on the branch (`origin/main..HEAD`) against the same convention. Must be triggered by a `push` event.
+Lints every commit subject on the branch (`origin/main..HEAD`) against the commit convention [semantic-release](https://semantic-release.gitbook.io/semantic-release/) expects (Angular preset, scope required). Must be triggered by a `push` event.
 
 ```yaml
 jobs:
