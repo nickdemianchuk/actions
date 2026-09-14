@@ -65,7 +65,7 @@ jobs:
               "@semantic-release/release-notes-generator",
               ["@semantic-release/changelog", { "changelogFile": "CHANGELOG.md" }],
               ["@semantic-release/git", { "assets": ["CHANGELOG.md"], "message": "chore: release ${nextRelease.version}" }],
-              "@semantic-release/github"
+              ["@semantic-release/github", { "successComment": ":tada: This PR is included in version `${nextRelease.version}` :tada:\n\nThe release is available on [GitHub release](${releases[0].url}) :package::rocket:" }]
             ]
           }
           EOF
