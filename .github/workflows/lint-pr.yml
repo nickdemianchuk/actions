@@ -14,6 +14,19 @@ jobs:
             exit 1
           fi
 
+  check-pr-body:
+    needs: validate-trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR body
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if [ -z "$PR_BODY" ]; then
+            echo "Error: PR body is missing"
+            exit 1
+          fi
+
   lint-pr:
     needs: validate-trigger
     runs-on: ubuntu-latest
