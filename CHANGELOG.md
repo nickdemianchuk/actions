@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/nickdemianchuk/actions/compare/0.5.0...0.6.0) (2026-09-14)
+
+
+### Features
+
+* switch release to app token only ([#27](https://github.com/nickdemianchuk/actions/issues/27)) ([eec0d72](https://github.com/nickdemianchuk/actions/commit/eec0d725f2ec2f182308e665fac229337d0716d1))
+
 # [0.5.0](https://github.com/nickdemianchuk/actions/compare/0.4.1...0.5.0) (2026-09-14)
 
 
