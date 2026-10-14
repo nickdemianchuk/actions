@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/nickdemianchuk/actions/compare/0.7.0...0.7.1) (2026-10-14)
+
+
+### Bug Fixes
+
+* align workflows with github rules ([#31](https://github.com/nickdemianchuk/actions/issues/31)) ([8f24c04](https://github.com/nickdemianchuk/actions/commit/8f24c04270460f82a7975e73797d43348c3b65e4))
+
 # [0.7.0](https://github.com/nickdemianchuk/actions/compare/0.6.0...0.7.0) (2026-09-14)
 
 
