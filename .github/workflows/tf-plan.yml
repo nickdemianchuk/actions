@@ -19,7 +19,7 @@ on:
 jobs:
   tf-plan:
     name: tf-plan
-    runs-on: ubuntu-24.04
+    runs-on: ${{ vars.ACTIONS_RUNNER }}
     permissions:
       contents: read
       pull-requests: write

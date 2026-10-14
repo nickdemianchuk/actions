@@ -5,7 +5,7 @@ on:
 
 jobs:
   validate-trigger:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.ACTIONS_RUNNER }}
     steps:
       - name: Validate trigger
         run: |
@@ -16,7 +16,7 @@ jobs:
 
   validate-commit-messages:
     needs: validate-trigger
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.ACTIONS_RUNNER }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -27,7 +27,7 @@ jobs:
           node-version: '24'
 
       - name: Install commitlint
-        run: npm install --no-save @commitlint/cli @commitlint/config-angular
+        run: npm install --no-save @commitlint/cli@21.2.3 @commitlint/config-angular@21.2.3
 
       - name: Create commitlint config
         run: |
