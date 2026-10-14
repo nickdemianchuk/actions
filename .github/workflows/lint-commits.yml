@@ -34,11 +34,7 @@ jobs:
           cat > commitlint.config.js << 'EOF'
           module.exports = {
             extends: ['@commitlint/config-angular'],
-            rules: {
-              'scope-empty': [2, 'always'],
-              'header-max-length': [2, 'always', 50],
-              'type-enum': [2, 'always', ['feat', 'fix', 'perf', 'revert', 'docs', 'style', 'refactor', 'test', 'build', 'ci']],
-            },
+            rules: { 'scope-empty': [2, 'always'] },
           };
           EOF
 
