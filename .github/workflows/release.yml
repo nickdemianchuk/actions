@@ -10,11 +10,8 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+    runs-on: ${{ vars.ACTIONS_RUNNER }}
+    permissions: {}
     steps:
       - name: Mint app token
         id: app-token
@@ -52,7 +49,7 @@ jobs:
           fi
 
       - name: Install semantic-release plugins
-        run: npm install --no-save semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
+        run: npm install --no-save semantic-release@25.0.9 @semantic-release/changelog@7.0.0 @semantic-release/git@11.0.1 @semantic-release/github@12.0.10
 
       - name: Create semantic-release config
         run: |

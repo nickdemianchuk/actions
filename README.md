@@ -13,7 +13,7 @@ Reusable GitHub Actions workflows: commit/PR linting, semantic-release versionin
 | [`tf-apply.yml`](#tf-applyyml) | `workflow_call` | `terraform apply` on a Terraform Cloud workspace |
 
 ### `lint-pr.yml`
-Lints the PR title against the commit convention [semantic-release](https://semantic-release.org) expects (Angular preset, scope required). Must be triggered by a `pull_request` event.
+Lints the PR title against the commit convention [semantic-release](https://semantic-release.org) expects (Angular preset, no scope). Must be triggered by a `pull_request` event.
 
 ```yaml
 jobs:
@@ -22,7 +22,7 @@ jobs:
 ```
 
 ### `lint-commits.yml`
-Lints every commit subject on the branch (`origin/main..HEAD`) against the commit convention [semantic-release](https://semantic-release.org) expects (Angular preset, scope required). Must be triggered by a `push` event.
+Lints every commit subject on the branch (`origin/main..HEAD`) against the commit convention [semantic-release](https://semantic-release.org) expects (Angular preset, no scope). Must be triggered by a `push` event.
 
 ```yaml
 jobs:
@@ -36,10 +36,6 @@ Runs [semantic-release](https://semantic-release.org) on `main`: bumps the versi
 ```yaml
 jobs:
   release:
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     uses: nickdemianchuk/actions/.github/workflows/release.yml@main
     secrets:
       APP_CLIENT_ID: ${{ vars.OCTO_BUDDY_CLIENT_ID }}

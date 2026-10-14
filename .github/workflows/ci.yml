@@ -10,9 +10,12 @@ on:
 jobs:
   lint-pr:
     if: github.event_name == 'pull_request'
+    permissions: {}
     uses: ./.github/workflows/lint-pr.yml
 
   lint-commits:
     if: github.event_name == 'push'
+    permissions:
+      contents: read
     uses: ./.github/workflows/lint-commits.yml
 
