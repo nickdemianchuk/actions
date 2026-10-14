@@ -20,8 +20,6 @@ jobs:
   tf-apply:
     name: tf-apply
     runs-on: ${{ vars.ACTIONS_RUNNER }}
-    permissions:
-      contents: read
     env:
       TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
       TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}

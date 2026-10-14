@@ -3,9 +3,6 @@ name: lint-commit
 on:
   workflow_call:
 
-permissions:
-  contents: read
-
 jobs:
   validate-trigger:
     runs-on: ${{ vars.ACTIONS_RUNNER }}

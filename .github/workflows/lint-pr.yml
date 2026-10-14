@@ -3,8 +3,6 @@ name: lint-pr
 on:
   workflow_call:
 
-permissions: {}
-
 jobs:
   validate-trigger:
     runs-on: ${{ vars.ACTIONS_RUNNER }}

@@ -11,7 +11,6 @@ on:
 jobs:
   release:
     runs-on: ${{ vars.ACTIONS_RUNNER }}
-    permissions: {}
     steps:
       - name: Mint app token
         id: app-token
